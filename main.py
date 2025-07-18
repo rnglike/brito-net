@@ -32,7 +32,7 @@ for network, training in pairs:
     )
 
     net.run(
-        data_path="net/val.txt",
-        data_labels_path="net/labels.val.txt",
+        data_path="net/test.txt",
+        data_labels_path="net/labels.test.txt",
         log=str(network[0]) + str(training[0]),
     )

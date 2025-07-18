@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import func as f
 import helper
 
-def train(input_size, hidden_size, output_size, lr, momentum, epochs, goal_mse, train="net/train.txt", test="net/test.txt", log=""):
+def train(input_size, hidden_size, output_size, lr, momentum, epochs, goal_mse, train="net/train.txt", val="net/val.txt", log=""):
 
     # Plotting data
     accuracy_history = []
@@ -17,7 +17,7 @@ def train(input_size, hidden_size, output_size, lr, momentum, epochs, goal_mse, 
     print(f"Loaded training data with shape: {P.shape}")
 
     # Load test data
-    N = np.loadtxt(test, dtype=np.uint8)
+    N = np.loadtxt(val, dtype=np.uint8)
     print(f"Loaded test data with shape: {N.shape}")
 
     # Load labels for training and test data
@@ -28,11 +28,11 @@ def train(input_size, hidden_size, output_size, lr, momentum, epochs, goal_mse, 
         plabels = file.read().rstrip().split('\n')
         plabels = np.fromstring(plabels[0], dtype=int, sep=' ')
 
-    with open('net/labels.test.txt', 'r') as file:
+    with open('net/labels.val.txt', 'r') as file:
         nlabels = file.read().rstrip().split('\n')
         nlabels = np.fromstring(nlabels[0], dtype=int, sep=' ')
 
-    print(f"Loaded {len(plabels)} training labels and {len(nlabels)} test labels.")
+    print(f"Loaded {len(plabels)} training labels and {len(nlabels)} validation labels.")
     print('')
 
     # Weights and biases
