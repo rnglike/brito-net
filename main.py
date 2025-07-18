@@ -25,7 +25,7 @@ for network, training in pairs:
         output_size=10,
         lr=trainings[training][0],
         momentum=trainings[training][1],
-        epochs=100,
+        epochs=10000,
         goal_mse=0.0005,
         train="net/digitos.txt",
         log=str(network[0]) + str(training[0])
