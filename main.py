@@ -10,8 +10,8 @@ encode.prepare("test", "net/test.txt")
 encode.prepare("val", "net/val.txt")
 
 encode.write([1, 2, 3, 4, 5, 6, 7, 8, 9, 0], "net/labels.train.txt")
-encode.write([2], "net/labels.test.txt")
-encode.write([1], "net/labels.val.txt")
+encode.write([1], "net/labels.test.txt")
+encode.write([2], "net/labels.val.txt")
 
 networks = {"A": 15, "B": 25, "C": 35}
 trainings = {"1": (0.1, 0.0), "2": (0.4, 0.0), "3": (0.9, 0.0), "4": (0.1, 0.4), "5": (0.9, 0.4)}
